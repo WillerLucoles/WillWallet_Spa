@@ -23,7 +23,6 @@ const Signin = () => {
             </div> 
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl w-full mb-8"> 
               <FaLock className="h-5 w-5 text-gray-400" />
-
               <Input type='password' placeholder='Password' /> 
             </div>
             <Button type='submit' text='Login'/>
