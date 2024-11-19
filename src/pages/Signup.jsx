@@ -3,6 +3,7 @@ import { FaUser, FaLock } from 'react-icons/fa'; // Importação dos ícones do 
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { MdAlternateEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -16,7 +17,7 @@ const Signup = () => {
           <form className="bg-white rounded-md shadow-2xl p-5 flex flex-col items-center space-y-6"> 
             <img src={LogoWillWallet} className="w-36 pb-3" /> {/* Ajuste do tamanho da logo */}
             <h1 className="text-gray-800 font-bold text-2xl mb-1">Olá, cadastre-se aqui!</h1> 
-            <p>Já tem sua conta? <a href="./pages/signup.jsx" className="text-sm text-blue-500 hover:text-blue-700 transition-all">acesse aqui</a></p>
+            <p>Já tem sua conta? <Link to='/Signin' className="text-sm text-blue-500 hover:text-blue-700 transition-all">Acesse aqui</Link></p>
             <p className="text-xs text-red-900">Esse projeto é para fins demostrativos, por favor utilize dados fictícios para testes.</p> 
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl w-full"> 
               <FaUser className="h-5 w-5 text-gray-400" />
