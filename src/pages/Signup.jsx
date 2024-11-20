@@ -3,18 +3,30 @@ import { FaUser, FaLock } from 'react-icons/fa'; // Importação dos ícones do 
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { MdAlternateEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ErrorInput from "../components/ErrorInput";
 import {signupSchema} from "../schemas/SignupSchema"
+import { signup } from "../services/users";
 
 
 
 const Signup = () => {
-    const {register, handleSubmit, formState:{ errors }} = useForm({resolver: zodResolver(signupSchema)});
-  function handleSubmitForm(data){
-    console.log(data)
+    const {register, 
+           handleSubmit, 
+           formState:{ errors },
+          } = useForm({resolver: zodResolver(signupSchema)});
+          const navigate = useNavigate();
+  async function handleSubmitForm(data){
+    try{
+    const response = await signup(data);
+    navigate("/");
+    console.log(response);
+    } catch(error){
+      console.log(error);
+    };
+
   }
   return (
     <div className="h-screen flex">
