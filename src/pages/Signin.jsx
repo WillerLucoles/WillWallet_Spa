@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import {signinSchema} from "../schemas/SigninSchema"
 import { zodResolver } from "@hookform/resolvers/zod";
 import ErrorInput from "../components/ErrorInput";
+import { signin } from "../services/users";
+import Cookies from "js-cookie";
 
 
 
@@ -15,8 +17,16 @@ const Signin = () => {
     handleSubmit,
     formState:{ errors }
   } = useForm({resolver: zodResolver(signinSchema)});
-  function handleSubmitForm(data){
-    console.log(data)
+ 
+  async function handleSubmitForm(data){
+    try{
+      const token = await signin(data);
+      Cookies.set("token", token.data, {expires:1});
+      console.log(Cookies.get("token"));
+    } catch(error){
+      console.log(error);
+    };
+
   }
 
   return (
