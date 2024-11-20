@@ -27,7 +27,7 @@ const Signin = () => {
       {/* Seção do formulário de login */}
       <div className="lg:w-1/2 flex w-full justify-center items-center bg-white space-y-8"> 
         <div className="w-full px-8 md:px-32 lg:px-24"> 
-          <form onSubmit={handleSubmit(handleSubmitForm)} className="bg-white rounded-md shadow-2xl p-5 flex flex-col items-center"> 
+          <form onSubmit={handleSubmit(handleSubmitForm)} className="bg-white rounded-md shadow-2xl p-5 flex flex-col items-center max-w-[55rem] mx-auto"> 
             <img src={LogoWillWallet} className="w-36 pb-3 mt-5" /> {/* Ajuste do tamanho da logo */}
             <h1 className="text-gray-800 font-bold text-2xl mb-1 mt-5">Olá, seja bem-vindo!</h1> 
             <p> Ainda não tem sua conta? <Link to='/Signup' className="mt-5 text-sm text-blue-500 hover:text-blue-700 transition-all">Cadastre aqui</Link></p>

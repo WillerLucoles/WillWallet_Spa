@@ -24,7 +24,7 @@ const Signup = () => {
       {/* Seção do formulário de login */}
       <div className="lg:w-1/2 flex w-full justify-center items-center bg-white space-y-8"> 
         <div className="w-full px-8 md:px-32 lg:px-24"> 
-          <form onSubmit={handleSubmit(handleSubmitForm)} className="bg-white rounded-md shadow-2xl p-5 flex flex-col items-center mt-5"> 
+          <form onSubmit={handleSubmit(handleSubmitForm)} className="bg-white rounded-md shadow-2xl p-5 flex flex-col items-center mt-5 max-w-[55rem] mx-auto"> 
             <img src={LogoWillWallet} className="w-36 pb-3 mt-5" /> {/* Ajuste do tamanho da logo */}
             <h1 className="text-gray-800 font-bold text-2xl mb-1 mt-5">Olá, cadastre-se aqui!</h1> 
             <p>Já tem sua conta? <Link to='/' className="text-sm text-blue-500 hover:text-blue-700 transition-all mt-5">Acesse aqui</Link></p>
